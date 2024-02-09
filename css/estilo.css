@@ -1,33 +1,30 @@
-*{
-    box-sizing:border-box;
+
+button[id="usuario"],[id="invitado"]{
+    border-radius:5px;
+    padding: 4px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
 }
 
-body{
-    width: 100px;
-    height: 100px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: solid;
-    margin: 0;
-}
-
-#content{
-  align-content: center;
+button[id="usuario"] {
+    color:#fff;
+	background-color:#04AA6D;
     
+	
 }
 
-button[type="button"] {
-    padding: 4%;
-	margin: 10px 100% 5px;
-	border-radius:5px;
-	color:#fff;
-	background-color:#b92020;
-	
+button[id="invitado"] {
+    color:#fff;
+	background-color:#008CBA;
+    
 }
 
 input {
     display: flex;
     padding: 3px;
     margin: 5px;
+    
     
 }
 
