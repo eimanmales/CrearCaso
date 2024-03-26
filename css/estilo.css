@@ -1,31 +1,104 @@
-
-button[id="usuario"],[id="invitado"]{
+*{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(../img/CarvajalTyS3.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+/* Mudulo de Inicio */
+#contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+}
+a#usuario, #invitado {
+    margin: 5px;
     border-radius:5px;
-    padding: 4px;
     display: inline-block;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 }
-
-button[id="usuario"] {
+a#usuario{
+    padding: 4px;
     color:#fff;
 	background-color:#04AA6D;
     
-	
 }
-
-button[id="invitado"] {
+a#invitado{
+    padding: 4px;
     color:#fff;
 	background-color:#008CBA;
     
 }
 
-input {
+
+
+
+
+/*Modulo de usuario */
+
+#content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
     display: flex;
-    padding: 3px;
-    margin: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+       
+}
+
+#login {
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(141, 63, 135, 0.8);
+    border: 2px solid black;
+    border-radius: 0.6em;
+}
+
+a#atras{
     
-    
+    float: right;
+    border-radius:5px;
+    padding: 4px;
+    color:#fff;
+	background-color:#ff0000;
+    text-decoration: none;
+}
+
+form input[id="usuarioUsu"],
+form input[id="passwordUsu"] {
+    background-color: #c0c0c0;
+    border-radius:5px;
+    display: flex;
+    padding: 4px;
+    margin: 10px;
+}
+
+form input[id="inicio"] {
+    float: right;
+    margin: 4px 10px;
+    padding: 2% 12px;
+	border-radius:5px;
+	background-color: rgb(12, 224, 12);
+    color: aliceblue;
+       
 }
 
 input::placeholder{
@@ -35,20 +108,80 @@ input::placeholder{
     padding: 3px;
 }
 
-form input[type="text"],
-form input[type="password"] {
-    background-color: mediumblue;
-    border-radius:5px;
-    
+
+
+
+/* Modulo de Invitado */
+
+
+#contenido {
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #04AA6D; */
+       
 }
 
+#loginInv {
+    background: rgba(141, 63, 135, 0.8);
+    padding: 3px;
+    border: 2px solid black;
+    border-radius: 0.6em;
+}
 
-form input[type="submit"] {
-    padding: 4% 16px;
-	border-radius:5px;
-	background-color: rgb(12, 224, 12);
-    color: aliceblue;
-    float: right;
-    display:block;
+#loginInv form #grid{
+    /* padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+    flex-wrap: wrap;*/
     
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+#loginInv form #block{
+    grid-column: 1 / 3;
+
+}
+
+form input[id="nombreInv"],
+input[id="telefonoInv"],
+input[id="emailInv"],
+input[id="empresaInv"],
+select[id="tipoInv"],
+textarea[id="mesajeInv"] {
+    width: 100%;
+    background-color: #c0c0c0;
+    border-radius:5px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2px;
+    margin: 2px;
+}
+textarea[id="mesajeInv"] {
+    resize: none;
+}
+
+form input[id="inicioInv"] {
+    width: 100%;
+	border-radius:5px;
+    background-color: rgb(12, 224, 12);
+    color: aliceblue;
+    padding: 4px;
+    margin-bottom: 5px;
+       
+}
+
+input, select, textarea::placeholder{
+    color: aliceblue;
+    font-size: 0.8em;
+    font-style: italic;
+    padding: 3px;
 }

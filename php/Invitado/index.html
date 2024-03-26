@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="../../css/estilo.css">
+<div id="contenido">
+    <div id="cancelar">
+        <a href="../../index.html" id="atras">Cancelar</a>
+    </div>
+    <br>
+    <div id="loginInv">
+        <form action="pag.php" method="post">
+            <p id="grid">
+                <input type="text" id="nombreInv" name="nombreInv" placeholder="Nombre" required>
+                <input type="tel" name="telefonoInv" id="telefonoInv" placeholder="Telefono" required>
+                <input type="email" name="emailInv" id="emailInv" placeholder="Email" required>
+                <input type="text" id="empresaInv" name="empresaInv" placeholder="Empresa" required>
+                </p>
+            <p id="block">
+                <select id="tipoInv" name="tipo">
+                    <option value="atasco" selected>Atasco</option>
+                    <option value="daño">Daño</option>
+                    <option value="insumo">Insumo</option>
+                    <option value="papel">Papel</option>
+                </select>
+                <textarea name="mensaje" id="mesajeInv" placeholder="Mensaje"></textarea>
+                <input type="submit" id="inicioInv" value="Crear">
+            </p>
+        </form>
+    </div>    
+</div>
