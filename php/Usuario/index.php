@@ -1,3 +1,11 @@
+<?php
+  session_start();
+
+  if(isset($_GET["cerrar_session"]) and $_GET["cerrar_session"]==true){
+    session_destroy();
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +27,7 @@
                 <input type="text" id="usuarioUsu" name="usuario" placeholder="Usuario" required>
                 <input type="password" id="passwordUsu" name="password" placeholder="Contraseña" required>
                 <input type="submit" id="inicio" value="Inicio">
-
+                <input type="hidden" value="login" name="accion">
             </form>
         </div>
         

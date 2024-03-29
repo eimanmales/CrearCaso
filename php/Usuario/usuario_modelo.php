@@ -1,19 +1,20 @@
 <?php
-    require_once("../modelo/conexion.php");
+    require_once("../modeloAbstractoDB.php");
     class Usuario extends ModeloAbstractoDB {
 		private $idUsu;
 		private $nomUsu;
 		private $teleUsu;
         private $emailUsu;
 		private $empUsu;
-		private $alias;
-        private $clave;
+		private $user;
+        private $password;
+		private $update_at;
 		
 		function __construct() {
 			//$this->db_name = '';
 		}
 
-		public function getIdusu(){
+		public function getIdUsu(){
 			return $this->idUsu;
 		}
 
@@ -25,7 +26,7 @@
 			return $this->teleUsu;
 		}
 
-        public function getEmailusu(){
+        public function getEmailUsu(){
 			return $this->emailUsu;
 		}
 
@@ -33,23 +34,30 @@
 			return $this->empUsu;
 		}
 		
-		public function getAlias(){
-			return $this->alias;
+		public function getUser(){
+			return $this->user;
 		}
 
-        public function getClave(){
-			return $this->clave;
+        public function getPassword(){
+			return $this->password;
 		}
 
-		public function consultar($comu_codi='') {
-			if($comu_codi !=''):
-				$this->query = "
-				SELECT comu_codi, comu_nomb, muni_codi
-				FROM tb_comuna
-				WHERE comu_codi = '$comu_codi' order by comu_codi
-				";
-				$this->obtener_resultados_query();
-			endif;
+		public function getUdate_at(){
+			return $this->update_at;
+		}
+
+		public function consultar($datos = array()) {
+			
+			$usuario = $datos['usuario'];
+			$password = $datos['password'];
+            $this->query = "
+            SELECT usua_codi, usua_user, usua_pass, usua_nomb, usua_foto
+			FROM tb_usuario 
+			WHERE usua_user = '$usuario'
+			";
+
+            $this->obtener_resultados_query();
+			
 			if(count($this->rows) == 1):
 				foreach ($this->rows[0] as $propiedad=>$valor):
 					$this->$propiedad = $valor;
@@ -57,6 +65,15 @@
 			endif;
 		}
 		
+		public function generarPassword($pass=""){
+            $opciones = [
+                'cost' => 12,
+            ];
+            
+            $passwordHashed = password_hash($pass, PASSWORD_BCRYPT, $opciones);
+            
+            return $passwordHashed;
+        }
 		
 		function __destruct() {
 			//unset($this);
